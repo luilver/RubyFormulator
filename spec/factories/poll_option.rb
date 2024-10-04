@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :option do
+  factory :poll_option do
     poll
     text { Faker::Lorem.sentence }
   end
