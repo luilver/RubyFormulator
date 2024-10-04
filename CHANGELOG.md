@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog][], and this project adheres to
 
 ## [Unreleased]
 ### Add
+- Support for the following Poll types:
+  - Single Choice: Where participants select one option from a list.
+  - Multiple Choice: Where participants select one or more options from a list.
+  - True/False: Where participants choose between two options, typically "True"
+    or "False."
+  - Open-Ended: Where participants can provide a free-text answer.
+  - Rating Scale: Where participants rate something on a scale, such as 1 to 5
+    or 1 to 10.
+  - Ranking: Where participants rank options in order of preference.
+  - Yes/No: Where participants choose between "Yes" or "No."
 - Frontend PWA or Widget
 - Posthog support
 - Support for common HTML fields and field types
