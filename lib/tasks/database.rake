@@ -21,5 +21,11 @@ namespace :db do
   task :reset do
     Rake::Task['db:drop'].execute
     Rake::Task['db:migrate'].execute
+    Rake::Task['db:seed'].execute
+  end
+
+  desc 'Seed the database'
+  task :seed do
+    load 'db/seeds.rb'
   end
 end
