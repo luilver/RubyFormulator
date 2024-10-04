@@ -7,6 +7,8 @@ describe Poll do
     RubyForms::API
   end
 
+  before { create(:poll_type) }
+
   describe 'Factories' do
     it 'has a valid factory' do
       expect(build(:poll)).to be_valid
@@ -15,7 +17,7 @@ describe Poll do
 
   describe 'Validations' do
     it 'is invalid without a title' do
-      expect(build(:poll, title: nil)).not_to be_valid
+      expect(build(:poll, question: nil)).not_to be_valid
     end
   end
 
@@ -47,7 +49,8 @@ describe Poll do
   describe 'POST api/polls' do
     let(:poll_params) do
       {
-        title: Faker::Lorem.question
+        question: Faker::Lorem.question,
+        poll_type_id: 1
       }
     end
     let(:option_params) do

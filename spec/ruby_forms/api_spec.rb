@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# Exposed poll endpoints: 3
+# GET
+# POST
+# PUT
+EXPOSED_POLLS_API_PATH = 3
+
 describe RubyForms::API do
   include Rack::Test::Methods
 
@@ -20,7 +26,7 @@ describe RubyForms::API do
       end
 
       it 'exposes polls api path' do
-        expect(json[:paths].size).to eq 1
+        expect(json[:paths].size).to eq EXPOSED_POLLS_API_PATH
       end
     end
 
@@ -37,8 +43,10 @@ describe RubyForms::API do
 
       let(:poll_params) do
         {
-          'title' => 'title of the poll',
-          'options' => 'options for the poll'
+          'question' => 'question of the poll',
+          'quiz_id' => 'quiz the poll belongs to',
+          'poll_options' => 'options for the poll',
+          'poll_type_id' => 'type of the poll'
         }
       end
 

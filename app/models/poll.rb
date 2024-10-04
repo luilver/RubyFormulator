@@ -2,7 +2,10 @@
 
 # Class Poll
 class Poll < ActiveRecord::Base
-  has_many :options
+  belongs_to :quiz
+  belongs_to :poll_type
 
-  validates :title, presence: true
+  has_many :poll_options
+
+  validates :question, presence: true
 end
