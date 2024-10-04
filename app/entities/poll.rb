@@ -5,11 +5,12 @@ module RubyForms
     # Poll Entity
     class Poll < Grape::Entity
       expose :id
-      expose :title
+      expose :question
+      expose :poll_type
 
-      with_options if: :with_options do
-        expose :options, with: Entities::Option
-      end
+      # with_options if: :with_options do
+      #   expose :poll_options, with: Entities::Option
+      # end
     end
   end
 end
