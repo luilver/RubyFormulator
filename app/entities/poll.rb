@@ -8,7 +8,7 @@ module RubyForms
       expose :title
 
       with_options if: :with_options do
-        expose :options, with: Entities::Option
+        expose :poll_options, with: Entities::PollOption
       end
     end
   end

@@ -7,6 +7,7 @@ require 'boot'
 Bundler.require :default, ENV.fetch('RACK_ENV', nil)
 
 require 'active_record'
+require './app/entities/poll_option'
 Dir[File.expand_path('../app/**/*.rb', __dir__)].each { |f| require f }
 
 begin

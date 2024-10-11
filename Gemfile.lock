@@ -175,7 +175,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  activesupport
   database_cleaner-active_record
   erb
   factory_bot

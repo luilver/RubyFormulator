@@ -4,5 +4,15 @@
 class Poll < ActiveRecord::Base
   has_many :options
 
-  validates :title, presence: true
+  has_many :poll_options
+
+  accepts_nested_attributes_for :poll_options, allow_destroy: true, reject_if: :option_blank
+
+  alias options poll_options
+
+  validates :question, presence: true
+
+  def option_blank(attributes)
+    attributes['text'].blank?
+  end
 end

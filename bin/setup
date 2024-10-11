@@ -15,9 +15,6 @@ def system!(*)
 end
 
 FileUtils.chdir APP_ROOT do
-  # This script is idempotent, so that you can run it at any time and get an
-  # expectable outcome.
-
   puts '== Installing dependencies =='
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
