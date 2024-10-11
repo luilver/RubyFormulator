@@ -17,8 +17,10 @@ module RubyForms
 
       desc 'create a poll'
       params do
-        requires :title, type: String, desc: 'title of the poll'
-        optional :options, type: [String], desc: 'options for the poll'
+        requires :question, type: String, desc: 'question of the poll'
+        requires :poll_type_id, type: String, desc: 'type of the poll'
+        optional :poll_options, type: [String], desc: 'options for the poll'
+        optional :quiz_id, type: [String], desc: 'quiz the poll belongs to'
       end
       post do
         # TODO: accept a quiz for creating a poll

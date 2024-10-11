@@ -9,6 +9,7 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'app/api/poll.rb'
 
 Style/Documentation:
   Exclude:

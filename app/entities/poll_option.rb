@@ -2,11 +2,11 @@
 
 module RubyForms
   module Entities
-    # Option Entity
-    class Option < Grape::Entity
+    # PollOption Entity
+    class PollOption < Grape::Entity
       expose :id
       expose :text
-      expose :is_correct
+      expose :poll_type
     end
   end
 end
