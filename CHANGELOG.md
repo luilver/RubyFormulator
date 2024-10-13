@@ -7,7 +7,6 @@ The format is based on [Keep a Changelog][], and this project adheres to
 ## [Unreleased]
 ### Add
 - Support for the following Poll types:
-  - Single Choice: Where participants select one option from a list.
   - Multiple Choice: Where participants select one or more options from a list.
   - True/False: Where participants choose between two options, typically "True"
     or "False."
@@ -33,6 +32,11 @@ The format is based on [Keep a Changelog][], and this project adheres to
 - with in favor of when within swagger specs
 ### Remove
 - app scope under spec dir
+
+## [Version 0.0.4]
+### Add
+- Support for the following Poll types:
+  - Single Choice: Where participants select one option from a list.
 
 ## [Version 0.0.3]
 - Overcommit
