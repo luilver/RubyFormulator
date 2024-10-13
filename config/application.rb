@@ -1,14 +1,29 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'app'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'app'))
 
 require 'boot'
 Bundler.require :default, ENV.fetch('RACK_ENV', 'development')
 
 require 'active_record'
 require './app/entities/poll_option'
-Dir[File.expand_path('../app/**/*.rb', __dir__)].each { |f| require f }
+require './app/api/poll'
+require './app/api/poll_type'
+require './app/api'
+require './app/entities/poll'
+require './app/entities/poll_type'
+require './app/models/choice'
+require './app/models/binary_choice'
+require './app/models/text_choice'
+require './app/models/poll'
+require './app/models/poll_option'
+require './app/models/poll_type'
+require './app/models/quiz'
+require './app/ruby_forms'
+
+# Non working
+# Dir[File.expand_path('./app/**/*.rb', __dir__)].each { |f| require f }
 
 begin
   yaml = 'config/database.yml'
