@@ -6,7 +6,7 @@ class PollOption < ActiveRecord::Base
   has_one :choice
 
   delegate :poll_type, to: :poll, prefix: false
-  delegate :selected, to: :choice, prefix: false
+  delegate :selected, to: :choice, prefix: false, allow_nil: true
 
   validates_uniqueness_of :text
 end
