@@ -53,7 +53,7 @@ GEM
       cgi (>= 0.3.3)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
-    faker (3.2.3)
+    faker (3.4.2)
       i18n (>= 1.8.11, < 2)
     grape (2.0.0)
       activesupport (>= 5)
