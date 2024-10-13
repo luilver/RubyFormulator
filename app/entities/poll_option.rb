@@ -7,6 +7,7 @@ module RubyForms
       expose :id
       expose :text
       expose :poll_type
+      expose :selected
     end
   end
 end
