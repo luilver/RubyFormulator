@@ -6,7 +6,6 @@ module RubyForms
     class PollOption < Grape::Entity
       expose :id
       expose :text
-      expose :poll_type
       expose :selected
     end
   end

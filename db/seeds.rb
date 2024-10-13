@@ -3,21 +3,39 @@
 PollType.delete_all
 Poll.delete_all
 Quiz.delete_all
+Choice.delete_all
 
 puts '== Inserting PollTypes =='
 single_choice = PollType.create(text: 'Single Choice') # Radio Button
-multiple_choice = PollType.create(text: 'Multiple Choice') # Checkboxes
+_multiple_choice = PollType.create(text: 'Multiple Choice') # Checkboxes
 
 ###  May be useful poll types
-_yes_no = PollType.create(text: 'Yes/No') # Binary Choice
-_true_false = PollType.create(text: 'True/False') # Binary Choice
+_yes_no = PollType.create(text: 'Yes/No') #  Choice
+_true_false = PollType.create(text: 'True/False') #  Choice
 _open_ended = PollType.create(text: 'Open-Ended') # Text response
 _rating_scale = PollType.create(text: 'Rating Scale') # Star Rating | Number scale
 #
 # The votes are collected without associating them with the identity of the users.
 _anonymous = PollType.create(text: 'Anonymous')
 #
+# Poll
+spacy = Poll.create(
+  question: 'What is not included in a pipeline that you can load into a spaCy?',
+  poll_type: single_choice
+)
+o1 =  PollOption.create(text: 'A config file describing how to create the pipeline.', poll: spacy)
+o2 =  PollOption.create(text: 'Binary weights to make statistical predictions.', poll: spacy)
+o3 =  PollOption.create(text: 'The labelled data that the pipeline was trained on.', poll: spacy)
+o4 =  PollOption.create(text: 'Strings of the pipeline\'s vocabulary and their hashes.', poll: spacy)
+
 #
+# Choices
+Choice.create(type: 'BinaryChoice', selected: false, poll_option: o1)
+Choice.create(type: 'BinaryChoice', selected: false, poll_option: o2)
+Choice.create(type: 'BinaryChoice', selected: true, poll_option: o3)
+Choice.create(type: 'BinaryChoice', selected: false, poll_option: o4)
+
+### QUIZES FROM HERE
 # **Quiz mode** is a feature within poll or survey systems where the purpose is
 # not just to gather opinions but to test users' knowledge or understanding of
 # a subject. In **quiz mode**, users are presented with questions, and there
@@ -62,7 +80,10 @@ _anonymous = PollType.create(text: 'Anonymous')
 #   shift from opinion-based questions to knowledge-based questions with
 #   definitive right and wrong answers.  _ranking = PollType.create(text:
 #   'Ranking')
-_quiz_mode = PollType.create(text: 'Quiz mode')
+#
+#
+# Uncomment this line
+# _quiz_mode = PollType.create(text: 'Quiz mode')
 
 ###  Unused poll types
 # Picture          :  Users select from a set of images instead of text options.
@@ -82,6 +103,7 @@ _quiz_mode = PollType.create(text: 'Quiz mode')
 # Hidden           :  The results are hidden from the users until the poll ends,
 #                     commonly used to avoid influencing others' votes.
 
+# Uncomment all these lines 'til the end
 puts '== Inserting Quiz =='
 q100 = Quiz.create(title: 'Civics Questions for the Naturalization Test')
 
