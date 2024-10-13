@@ -13,6 +13,9 @@ module RubyForms
       get ':id' do
         poll = ::Poll.find(params[:id])
         present poll, with: RubyForms::Entities::Poll, with_options: true
+      rescue ActiveRecord::RecordNotFound => e
+        Logger.new($stdout).error(e)
+        error!({ message: 'RECORD_NOT_FOUND' }, 404)
       end
 
       desc 'create a poll'
