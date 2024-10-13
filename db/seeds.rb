@@ -7,7 +7,7 @@ Choice.delete_all
 
 puts '== Inserting PollTypes =='
 single_choice = PollType.create(text: 'Single Choice') # Radio Button
-_multiple_choice = PollType.create(text: 'Multiple Choice') # Checkboxes
+multiple_choice = PollType.create(text: 'Multiple Choice') # Checkboxes
 
 ###  May be useful poll types
 _yes_no = PollType.create(text: 'Yes/No') #  Choice
